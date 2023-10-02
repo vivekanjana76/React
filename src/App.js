@@ -1,10 +1,14 @@
-import Btn from './Btn';
+import Child from "./Child";
 import './App.css';
 
 function App() {
+  const date = new Date();
+
   return (
-    <Btn />
+    <div>
+      <Child message={date.toLocaleTimeString()} />
+    </div>
   );
 }
-
-export default App;
+  
+  export default App;
