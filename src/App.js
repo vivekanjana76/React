@@ -1,13 +1,10 @@
-import Child from "./Child";
+import InputComponent from "./InputComponent";
 import './App.css';
 
 function App() {
-  const date = new Date();
 
   return (
-    <div>
-      <Child message={date.toLocaleTimeString()} />
-    </div>
+    <InputComponent />
   );
 }
   
