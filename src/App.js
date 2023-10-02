@@ -1,10 +1,10 @@
-import InputComponent from "./InputComponent";
+import RegisterForm from "./RegisterForm.js";
 import './App.css';
 
 function App() {
 
   return (
-    <InputComponent />
+    <RegisterForm />
   );
 }
   
