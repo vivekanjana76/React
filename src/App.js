@@ -1,22 +1,18 @@
-import { useReducer } from "react";
-
-const reducer = (state, action) => {
-  if (action.type === 'ride') return {money: state.money + 10};
-  if (action.type === 'fuel') return {money: state.money - 50};
-  return new Error();
-}
+import Homepage from "./Homepage";
+import AboutMe from "./AboutMe";
+import {Routes, Route, Link} from 'react-router-dom';
 
 function App() {
-  const initialState = {money: 100};
-  const [state, dispatch] = useReducer(reducer, initialState);
-
   return (
     <div className="App">
-      <h1>Wallet: {state.money}</h1>
-      <div>
-        <button onClick={()=>dispatch({ type:'ride'})}>A new customer!</button><br/>
-        <button onClick={()=>dispatch({ type:'fuel'})}>Refill the tank!</button><br/>
-      </div>
+      <nav className="nav">
+        <Link to="/" className="nav-item">Homepage</Link>
+        <Link to="/about-me" className="nav-item">About Me</Link>
+      </nav>
+      <Routes>
+        <Route path="/" element={<Homepage />} />
+        <Route path="/about-me" element={<AboutMe />} />
+      </Routes>
     </div>
   );
 }
